@@ -96,7 +96,7 @@ var users = [
     {
         id: 1,
         name: 'Administrator',
-        role: 'Admin',
+        roles: ['Admin', 'Staff', 'User'],
         username: 'admin',
         password: 'admin'
     },
@@ -104,7 +104,7 @@ var users = [
     {
         id:2,
         name: 'Staff',
-        role: 'Staff',
+        roles: ['Staff', 'User'],
         username: 'staff',
         password: 'staff'
     },
@@ -112,12 +112,11 @@ var users = [
     {
         id: 3,
         name: 'User',
-        role: 'User',
+        roles: ['User'],
         username: 'user',
         password: 'user'
     }
 ]
-
 
 server.use(jsonServer.rewriter({
   '/delayed': '/'
@@ -125,7 +124,6 @@ server.use(jsonServer.rewriter({
 
 function authenticateUser(req, res) {
     console.log("auth ", req.body.username);
-
      
     var user = _.find(users, function(user) { return user.username == req.body.username && user.password == req.body.password; });
 
@@ -147,9 +145,9 @@ function authenticateUser(req, res) {
     res.json({
         token : token,
         expires: expires,
-        user: safeUser
-    });
- 
+        user: safeUser,
+        token_type: 'bearer'
+    }); 
 }
 
 function validateToken(req, res, next) {
@@ -171,13 +169,11 @@ function validateToken(req, res, next) {
     try {
         var decoded = jwt.decode(token, server.get('jwtTokenSecret'));
 
-        
         if (decoded.exp <= Date.now()) {
              res.sendStatus(400);
             return;
         }
 
-        
         var user = _.find(users, function(user) { return user.id == decoded.iss});
 
         if (!user) {
@@ -197,7 +193,7 @@ function validateToken(req, res, next) {
 
 if (commandLine.indexOf("authenable") >= 0) {
      console.log("Authentication enabled");
-     server.post('/authenticate', authenticateUser)
+     server.post('/oauth/token', authenticateUser)
      server.use(validateToken); 
 }
   
@@ -205,9 +201,10 @@ var router = jsonServer.router('db.json')
 server.use('/api', router)
 
 
-
 server.listen(7070, function (err) {
     if (!err) {
          console.log('JSON Server is running  at 7070')
+    } else {
+        console.log("Error in starting REST API Server ", err);
     }
 })

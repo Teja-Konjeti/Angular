@@ -1,0 +1,19 @@
+<h2>Shopping Cart</h2>
+
+<p>
+    <button (click)="checkout()">Checkout</button>
+
+    <button (click)="removeAll()">Remove All</button>
+</p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+    </tr>
+
+    <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+    </tr>
+</table>
