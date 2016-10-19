@@ -6,10 +6,7 @@ import {Component} from "@angular/core";
 //TODO: handle unique value
 
 @Component({
-    template: `
-                 
-    
-    `
+    templateUrl: 'app/product/templates/product-search.component.html'
 })
 export class ProductSearchComponent {
    
