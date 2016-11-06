@@ -4,7 +4,7 @@ import "rxjs/Rx";
 
 @Component({
     selector: 'home',
-    templateUrl: 'app/home/home.component.html'
+    templateUrl: 'app/home/templates/home.component.html'
 })
 export class HomeComponent implements OnInit {
     constructor() {
