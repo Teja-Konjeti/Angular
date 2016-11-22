@@ -1,4 +1,9 @@
-// server.js
+// api-server.js
+//RESTful API server using json-server module
+//support for enable/disable cors
+//support for oauth authentication
+//just for angular-reactjs-workshop
+
 var jsonServer = require('json-server')
 
 var jwt = require('jwt-simple');
@@ -7,11 +12,6 @@ var moment = require('moment');
 
 var server = jsonServer.create()
 server.set('jwtTokenSecret', 'yX!fglBbZr');
-
-
-
-
-
 
 server.get('/', function(req, res) {
     var results = [];
@@ -41,9 +41,6 @@ server.get('/', function(req, res) {
         results.push("</li>");
     })
     results.push("</ul>");
-
-
-
     results.push("<h1>Delayed End Points (2 to 8 seconds delay)</h2>");
     
     results.push("<ul>");
@@ -196,8 +193,42 @@ if (commandLine.indexOf("authenable") >= 0) {
      server.post('/oauth/token', authenticateUser)
      server.use(validateToken); 
 }
-  
+
 var router = jsonServer.router('db.json')
+
+server.get('/api/exist/:model/:property/:value', function(req, res){
+    var model = req.params['model'];
+    var property = req.params['property']
+    var value = req.params['value'];
+    
+    if (!model || !value || !property || !router.db.has(model).value()) {
+        res.status(422);
+        res.end();
+        return;
+    }
+
+    value = value.toLowerCase();
+
+    var results = router.db.get(model)
+    .filter(function(m) {
+        var m = m[property].toString().toLowerCase();
+        return m == value;
+    })
+    .take(1)
+    .value()
+ 
+    if (results.length > 0) {
+        res.json({result: true})
+        res.end();
+        return;
+    }
+
+    return res.json({result: false})
+})
+
+
+
+
 server.use('/api', router)
 
 
