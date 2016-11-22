@@ -25,7 +25,8 @@
     "build": "gulp copy-libs",
     "build-copy": "gulp copy:assets",
     "start-wp": "webpack-dev-server --inline --progress --port 8080",
-    "build-wp": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
+    "build-wp": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "test-wp": "karma start karma-wp.config.js"
   },
   "keywords": [],
   "author": "",
@@ -94,7 +95,9 @@
     "uglifyjs": "^2.4.10",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",
-    "webpack-merge": "^0.17.0"
+    "webpack-merge": "^0.17.0",
+    "phantomjs-prebuilt": "^2.1.7",
+    "karma-phantomjs-launcher": "^1.0.2"
   },
   "repository": {}
 }
