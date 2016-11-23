@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, Renderer } from '@angular/core';
+import { Directive, ElementRef, Component, HostListener, Input, Renderer } from '@angular/core';
 
 @Directive({ selector: '[myHighlight]' })
 export class HighlightDirective {
@@ -25,4 +25,17 @@ export class HighlightDirective {
 
    private _defaultColor = 'red';
 
+}
+
+
+@Component({
+    selector: 'hightlight-component',
+    template: `
+        <p [myHighlight]="'blue'">
+            This paragraph is powered by Angular Attribute directive
+        </p>
+    `
+})
+export class HighlightComponent {
+    
 }

@@ -9,13 +9,14 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": [
+      "./node_modules/@types/"
+    ],
     "outDir": "dist"
   },
-
-   "exclude": [
-    "node_modules",
-    "typings/main",
-    "typings/main.d.ts",
-    "snippets"
+  "compileOnSave": true,
+  "exclude": [
+    "node_modules/*",
+    "**/*-aot.ts"
   ]
 }
