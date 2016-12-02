@@ -1,0 +1,123 @@
+
+>  ~ mkdir ng2-sysjs
+>  ~ cd ng2-sysjs
+
+>  npm init
+>  npm install @angular/common @angular/compiler @angular/core --save
+
+
+>  npm install @angular/forms  @angular/http @angular/router    --save
+ 
+>  npm install @angular/platform-browser @angular/platform-browser-dynamic --save
+ 
+>  npm install core-js rxjs zone.js --save
+ 
+>  npm install typescript --save-dev
+ 
+>  npm install @types/node @types/core-js  @types/jasmine --save-dev
+ 
+>  npm install lite-server  --save-dev
+  
+>  npm install systemjs core-js reflect-metadata zone.js  --save
+ 
+-> mkdir app
+
+Note: copy-paste/create below files to app folder
+ app/
+  	app.component.ts
+  	app.module.ts
+  	main.ts
+
+Note: copy-paste/create index.html files to root folder ie ng2-sysjs 
+
+  ng2-sysjs
+  		index.html
+
+Copy-paste/create   systemjs.config.js
+
+  ng2-sysjs
+  		systemjs.config.js
+
+Copy-paste/create styles.css
+	ng2-sysjs
+		styles.css
+
+
+Serving files
+
+
+"lite": "lite-server",
+
+compile typescript one time
+
+"tsc": "tsc",
+
+
+compile typescript in watch mode
+
+"tsc:w": "tsc --watch"
+
+
+start web server and typescript compiler at same time
+
+>  npm install concurrently  --save-dev
+
+"start": "concurrently \"tsc -w\"  \"lite-server\" ",
+
+//Note: Create production bundle
+
+>  npm install browserify  --save-dev
+ 
+
+>  mkdir dist
+
+Note: Add below to scripts
+
+"bundle": "browserify -s main app/main.js > dist/app.bundle.js"
+
+
+>  npm run bundle
+ 
+>  npm install uglifyjs  --save-dev
+
+"minify:bundle": "uglifyjs dist/app.bundle.js --screw-ie8 --compress --mangle --output app/app.bundle.min.js"
+
+>  npm run minify:bundle
+
+
+>  npm run build
+
+
+>  npm install gulp  --save-dev
+
+
+Copy-paste/create gulpfile.js
+	ng2-sysjs
+		gulpfile.js
+
+Add  below
+    "gulp:build": "gulp build" 
+to script
+
+>  npm run gulp:build
+
+Add  below
+  "build": "tsc && npm run bundle && npm run minify:bundle && npm run gulp:build"
+to scripts
+
+
+//Now release files are in dist folder
+
+Copy the release files into web server www folders
+//hosting using http-server static file server 
+//developed using node.js
+
+>  npm install http-server -g
+
+//Copy dist to your web server example www
+
+>  cd www
+
+//Run web server, disable caching files
+
+>  http-server . -c-1
