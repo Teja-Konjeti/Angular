@@ -6,14 +6,14 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ],
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "typeRoots": [
-      "./node_modules/@types/"
-    ],
-    "outDir": "dist/"
+
+     "outDir": "dist/"
   },
+
   "compileOnSave": true,
   "exclude": [
     "node_modules/*",
