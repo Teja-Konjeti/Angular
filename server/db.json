@@ -49,7 +49,7 @@
       "display": "3.7\" 480 x 800",
       "gpu": "Adreno 200",
       "id": 1,
-      "name": "HTC 7 Mozart Updated",
+      "name": "HTC 7 Mozart",
       "os": "Windows Phone 7",
       "ram": "576 MB",
       "size": "85.2 cm3 119 x 60.2 x 11.9 mm",
@@ -334,7 +334,7 @@
       "display": "3.5\" 640 x 960 Retina display, 326 ppi",
       "gpu": "PowerVR SGX543MP2",
       "id": 20,
-      "name": "Apple iPhone 4S",
+      "name": "Apple iPhone 10S",
       "os": "iOS 5, upgradeable to iOS 9.0",
       "ram": "512 MB",
       "size": "62.8 cm3 115.2 x 58.6 x 9.3mm",
@@ -1496,12 +1496,6 @@
       "storage": "8, 16 or 32 GB",
       "weight": "137 g",
       "year": 2010
-    },
-    {
-      "name": "New Phone",
-      "year": 2010,
-      "brandId": 5,
-      "id": 101
     }
   ],
   "states": [

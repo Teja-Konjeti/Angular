@@ -194,7 +194,7 @@ if (commandLine.indexOf("authenable") >= 0) {
      server.use(validateToken); 
 }
 
-var router = jsonServer.router('db.json')
+var router = jsonServer.router('./server/db.json')
 
 server.get('/api/exist/:model/:property/:value', function(req, res){
     var model = req.params['model'];
