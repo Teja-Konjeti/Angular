@@ -32,7 +32,8 @@ import "rxjs/Rx";
 
 
 @Component({
-    templateUrl: 'app/cart/checkout.component.html'
+    moduleId: module.id, //disable this for webpack
+    templateUrl: 'checkout.component.html'
 })
 export class CheckoutComponent implements OnInit {
     products: any = [];
