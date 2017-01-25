@@ -2,6 +2,7 @@
 typings/**
 node_modules
 jspm_packages
+app/**/*.js
 link-checker-results.txt
 **/*npm-debug.log.*
 *.js.map
