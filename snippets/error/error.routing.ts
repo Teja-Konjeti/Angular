@@ -1,14 +1,13 @@
 import {Component} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 
-import {ThrowErrorComponent, ErrorComponent, ForbiddenErrorComponent, PageNotFoundErrorComponent} from "./error.component";
+import {ErrorComponent, 
+        ForbiddenErrorComponent, 
+        PageNotFoundErrorComponent} 
+        from "./error.components";
 
 const routes:Routes = [
-    {
-        path: "throwerror",
-        component: ThrowErrorComponent
-    },
-
+   
     {
         path: "error",
         component: ErrorComponent

@@ -5,13 +5,20 @@ import {RouterModule} from "@angular/router";
 
 import {errorRouting} from "./error.routing";
 
-import {ThrowErrorComponent, ErrorComponent, ForbiddenErrorComponent, PageNotFoundErrorComponent} from "./error.component";
+import {ErrorComponent, 
+        ForbiddenErrorComponent, 
+        PageNotFoundErrorComponent} from "./error.components";
 
 import {ApplicationErrorHandlerService} from "./error.service"
 
 @NgModule({
-    imports: [CommonModule, RouterModule, errorRouting],
-    declarations: [ThrowErrorComponent, ErrorComponent, ForbiddenErrorComponent, PageNotFoundErrorComponent],
+    imports: [CommonModule, 
+              RouterModule, 
+              errorRouting],
+    declarations: [
+        ErrorComponent, 
+        ForbiddenErrorComponent, 
+        PageNotFoundErrorComponent],
     providers: [
            {
                provide: ErrorHandler,

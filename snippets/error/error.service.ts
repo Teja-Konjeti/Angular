@@ -22,7 +22,7 @@ export class ApplicationErrorHandlerService implements ErrorHandler {
  
             setTimeout(() =>  {
                  //this.location.go("/error"); //This doesn't trigger router
-                  window.location.assign("http://localhost:3000/error");
+                  //window.location.assign("http://localhost:3000/error");
             }, 3000);
 
         } catch ( handlingError ) {
