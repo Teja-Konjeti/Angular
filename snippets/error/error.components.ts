@@ -1,7 +1,5 @@
 import {Component, OnInit} from "@angular/core";
 
-import {Routes, RouterModule} from "@angular/router";
-
 @Component({
     template:`
        <h3> The page/url you are looking for does not exist </h3>
@@ -46,24 +44,4 @@ export class ForbiddenErrorComponent {
     
 }
 
-
-//This component is just for demonstrating
-//to throw custom errors
-@Component({
-    template: 'throw error '
-})
-export class ThrowErrorComponent implements OnInit {
-    constructor() {
-        
-    }
-
-    ngOnInit() {
-        let a : any = {};
-        let b: any = 0;
-
-        if (b == 0)
-             throw new Error("NAN Exception");
-
-        let c : any = a / b;
-    }
-}
+ 
