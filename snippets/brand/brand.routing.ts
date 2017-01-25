@@ -1,4 +1,4 @@
-import {Routes} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {BrandListComponent} from "./brand-list.component";
 
 import {BrandEditComponent} from "./brand-edit.component";
@@ -14,6 +14,7 @@ export const routes = [
         component: BrandEditComponent
     }
 ]
+
 
 export const components = [
     BrandListComponent,

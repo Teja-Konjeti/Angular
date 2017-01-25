@@ -8,7 +8,7 @@ import { FormBuilder,
 
 
 @Component({
-    templateUrl: 'app/brand/templates/brand-edit.component.html'
+    templateUrl: 'app/brand/brand-edit.component.html'
 })
 export class BrandEditComponent implements OnInit {
     brandNameControl: FormControl;

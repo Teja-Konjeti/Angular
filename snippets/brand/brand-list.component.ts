@@ -3,7 +3,7 @@ import {Component, OnInit} from "@angular/core";
 import {BrandService} from "./brand.services";
 
 @Component({
-    templateUrl: 'app/brand/templates/brand-list.component.html',
+    templateUrl: 'app/brand/brand-list.component.html',
     selector: 'brand-list'
 })
 export class BrandListComponent implements OnInit {
