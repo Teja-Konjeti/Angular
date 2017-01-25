@@ -5,7 +5,7 @@ import {CartStorageService} from "../cart/cart.services";
 import {Router} from "@angular/router";
 
 @Component({
-    templateUrl: 'app/cart/templates/cart.component.html'
+    templateUrl: 'app/cart/cart.component.html'
 })
 export class CartComponent {
     products: any = [];

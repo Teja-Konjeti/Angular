@@ -32,7 +32,7 @@ import "rxjs/Rx";
 
 
 @Component({
-    templateUrl: 'app/cart/templates/checkout.component.html'
+    templateUrl: 'app/cart/checkout.component.html'
 })
 export class CheckoutComponent implements OnInit {
     products: any = [];
