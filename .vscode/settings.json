@@ -1,3 +1,8 @@
 {
-    "typescript.tsdk": "./node_modules/typescript/lib"
+    "typescript.check.workspaceVersion": false,
+
+    "files.exclude": {
+        "**/*.js": {"when": "$(basename).ts"},
+        "**/*.map": {"when": "$(basename).map"}
+    }
 }
