@@ -2,10 +2,13 @@
 <html>
   <head>
     <title>Angular QuickStart</title>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/picnic.css">
+
     <link rel="stylesheet" href="assets/styles.css">
-      <link rel="stylesheet" href="assets/flexboxgrid.css">
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -15,7 +18,7 @@
 
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('app').catch(function(err){ console.error(err); });
+      System.import('main.js').catch(function(err){ console.error(err); });
     </script>
   </head>
 
