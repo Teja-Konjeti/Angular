@@ -1,0 +1,28 @@
+import {Component, OnInit} from "@angular/core";
+
+import {BrandService} from "./brand.services";
+
+@Component({
+    moduleId: module.id,
+    templateUrl: 'brand-list.component.html',
+    selector: 'brand-list'
+})
+export class BrandListComponent implements OnInit {
+    brands:any[] = [];
+    constructor(private brandService: BrandService) {
+
+    }
+
+    ngOnInit() {
+        this.brandService.getBrands()
+        .subscribe( (brands: any[]) => {
+            this.brands = brands;
+        })
+    }
+ 
+
+    ngOnDestroy() {
+
+    }
+
+}

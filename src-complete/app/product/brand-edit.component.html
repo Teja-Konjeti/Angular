@@ -1,0 +1,32 @@
+<h2>Brand Edit</h2>
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>
+        <label>Brand Name</label>
+        <input type="text" 
+                formControlName="brandName"
+                [(ngModel)]="brand.name"   />
+    </p>
+
+
+    <span *ngIf="!brandNameControl.valid">
+        Name is not valid
+    </span>
+
+
+    <br />
+
+
+    <span *ngIf="brandNameControl.errors?.invalidBrand">
+        Invalid Brand name
+    </span>
+
+    
+ 
+
+ <p>
+        <button type="submit" [disabled]="!form.valid">Submit</button>
+ </p>
+
+</form>    

@@ -142,7 +142,7 @@ function authenticateUser(req, res) {
     res.json({
         token : token,
         expires: expires,
-        user: safeUser,
+        identity: safeUser,
         token_type: 'bearer'
     }); 
 }

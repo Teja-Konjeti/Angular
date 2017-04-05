@@ -1,0 +1,22 @@
+<h2 highlight>Product List Page</h2>
+
+<select [(ngModel)]="year" >
+    <option value="" selected > All</option>
+
+    <option *ngFor="let y of years" value="{{y}}">{{y}}</option>
+</select>
+
+<table>
+     <tr>
+         <th>Product</th>
+        
+     </tr>
+     <tr *ngFor="let p of (products | byYear:year)">
+         <td>
+             <product-widget [product]="p" 
+                (addToShoppingCart)="addToPurchaseList($event)"
+             >
+             </product-widget>
+         </td>
+     </tr>
+</table>

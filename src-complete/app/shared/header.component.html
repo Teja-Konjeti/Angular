@@ -1,0 +1,18 @@
+<nav>
+    <a routerLink="/"> Home</a>
+    <a routerLink="/products">Products</a>
+    <a routerLink="/brands">Brands</a>
+     <a routerLink="/cart">Cart</a>
+    <a routerLink="/about">About</a>
+
+    <a routerLink="/auth/login" *ngIf="!isLoggedIn">Login</a>
+
+    <button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
+
+
+    <button (click)="changeLang('de')">German</button>
+
+    <button (click)="changeLang('en')">English</button>
+
+
+</nav>

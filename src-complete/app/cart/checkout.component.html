@@ -1,0 +1,43 @@
+
+<h1>Checkout Details</h1>
+
+<p>
+    Congrats.. You have saved {{offer.discount}}% <br />
+    Use coupon <b>{{offer.coupon}}</b>
+</p>
+ 
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>
+        <label>Full Name:</label>
+        <input type="text" formControlName="fullName" [(ngModel)]="address.name">
+    </p>
+
+    <p>
+        <label>State:</label>
+        <select   formControlName="state" [(ngModel)]="address.stateId">
+            <option value='{{state.id}}' *ngFor="let state of states">{{state.name}}</option>
+        </select>
+    </p>
+
+    <p>
+        <label>City:</label>
+        <select   formControlName="city" [(ngModel)]="address.cityId">
+            <option value='{{city.id}}' *ngFor="let city of cities">
+                {{city.name}}</option>
+        </select>
+    </p>
+
+ 
+ <p>
+        <label>Country</label>
+        <input type="text" formControlName="country" [(ngModel)]="address.country">
+
+        IN or India
+    </p>
+        
+        
+    <p>
+        <button type="submit" [disabled]="!form.valid">Submit</button>
+    </p>
+</form>

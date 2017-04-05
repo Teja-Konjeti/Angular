@@ -1,0 +1,75 @@
+<h2>{{product.name}}</h2>
+
+<span *ngIf="inProgress">
+<img src="/assets/loading.gif" height="50" width="50" />    
+Operation in progress
+    
+</span>
+
+<form  (ngSubmit)="saveProduct()"  #productForm="ngForm" >
+   
+    <span *ngIf="!productForm.valid">
+        Invalid Form
+    </span>
+
+
+    <p> Name <input name="name" 
+                    [(ngModel)]="product.name"
+
+                    required
+                    minlength="3"
+                    maxlength="100"
+
+                     
+                    #productName = "ngModel"
+             >
+
+             <span *ngIf="!productName.valid && productName.dirty">
+                 Invalid Name
+             </span>
+
+
+            
+             <span *ngIf="productName.errors?.minlength">
+                 minimum 3 chars needed
+             </span>
+
+             
+
+    </p>
+
+     <p> Year <input name="year" 
+                    [(ngModel)]="product.year"
+ 
+
+                    pattern="[0-9]{4}"
+
+                    #productYear="ngModel"
+             >
+    </p>
+
+    
+        <span *ngIf="!productYear.valid && productYear.dirty">
+            Invalid Year
+        </span>
+
+    <p> Brands {{brands.length}} 
+
+        <select name="brandId"  [(ngModel)]="product.brandId">
+            <option *ngFor="let brand of brands"
+            value="{{brand.id}}" >
+
+            {{brand.name}}
+
+            </option>
+
+        </select>
+
+    </p>
+
+    <button type="submit" [disabled]="!productForm.valid" >Save</button>
+
+</form>
+
+
+<button (click)="deleteProduct()">Delete</button>
