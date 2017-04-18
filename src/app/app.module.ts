@@ -8,31 +8,24 @@ import {AppComponent} from "./app.component";
 import {HomeComponent} from "./home.component";
 
 import {AboutComponent} from "./about.component";
+import {ProductModule} from "../product/product.module"
 
-import {ProductListComponent} from "./product/product-list.component";
-
-
-import {ProductService} from "./product/product.service";
 @NgModule({
     imports:[
-        BrowserModule
+        BrowserModule,
+        ProductModule
     ],
 
     declarations:[
         AppComponent,
         HomeComponent,
         AboutComponent,
-        ProductListComponent
     ],
-
     bootstrap: [
-        AppComponent
+        AppComponent    //Starts at AppComponent hence all of the selectors are placed here
     ],
-
-    providers: [
-        ProductService
+    providers:[
     ]
-
 })
 
 export class AppModule{
