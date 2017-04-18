@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+
+<h2>Our team</h2>
+<button (click) = "showHide()">Show/Hide</button>
+<ul *ngIf ="showMembers">
+    <li *ngFor="let name of members">
+        {{name}}
+    </li>
+</ul>
+<ul>
+<li *ngFor="let branch of branches">
+    {{branch}}
+</li>
+</ul>
+<h2>Likes</h2>
+
+<span class="success">{{likes}}</span>
+
+<button (click)="likeClicked(1)">+1</button>  
+<button (click)="likeClicked(-1)">-1</button> 
+
+<input #memberName/>
+
+<button (click)="addMember(memberName.value);memberName.value=null">
+    addMember
+    </button>
+

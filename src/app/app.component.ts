@@ -1,7 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
+
 
 @Component({
-  selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+moduleId:module.id,
+selector:'product-app',//html element
+templateUrl:"/app/app.component.html"
 })
-export class AppComponent  { name = 'Angular'; }
+
+export class AppComponent{
+title:string ="Product";
+aboutTitle:string = "About from App";
+}
+
+
+
+
