@@ -10,10 +10,13 @@ import {HomeComponent} from "./home.component";
 import {AboutComponent} from "./about.component";
 import {ProductModule} from "../product/product.module"
 
+import {routingModule} from "./app.routing";
+import * as config from "./app.config";
 @NgModule({
     imports:[
         BrowserModule,
-        ProductModule
+        ProductModule,
+        routingModule
     ],
 
     declarations:[
@@ -25,6 +28,10 @@ import {ProductModule} from "../product/product.module"
         AppComponent    //Starts at AppComponent hence all of the selectors are placed here
     ],
     providers:[
+        {
+            provide:"apiEndPoint",
+            useValue: config.API_END_POINT
+        }
     ]
 })
 

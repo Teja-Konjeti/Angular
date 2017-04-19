@@ -43,7 +43,7 @@
   ],
   "products": [
     {
-      "brandId": 5,
+      "brandId": 1,
       "camera": "8 MP AF CMOS sensor with xenon flash, 720p HD video recording",
       "cpu": "1 GHz Qualcomm QSD 8250 Scorpion (Snapdragon)",
       "display": "3.7\" 480 x 800",
@@ -238,19 +238,19 @@
       "year": 2010
     },
     {
-      "brandId": 3,
+      "brandId": 4,
       "camera": "5 MP AF with LED flash and geotagging, 720p HD video recording",
       "cpu": "1 GHz Qualcomm QSD 8650 Scorpion (Snapdragon)",
       "display": "4.0\" 480 x 800",
       "gpu": "Adreno 200",
       "id": 14,
-      "name": "LG Optimus 7",
+      "name": "LG Optimus 8",
       "os": "Windows Phone 7",
       "ram": "512 MB",
       "size": "85.9 cm3 125 x 59.8 x 11.5 mm",
       "storage": "16.5 GB",
       "weight": "157 g",
-      "year": 2010
+      "year": 2022
     },
     {
       "brandId": 3,

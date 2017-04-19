@@ -1,0 +1,44 @@
+<h1>Product Edit - {{product.name}}</h1>
+
+
+<form (ngSubmit)="saveProduct()" #productForm="ngForm">
+  <p *ngIf="!productForm.valid">
+  Invalid form
+  </p>
+  <p *ngIf="productForm.dirty">
+  Form changed
+  </p>
+    Name
+    <input name="name" [(ngModel)]="product.name"
+    required
+    minlength="3"
+    #productName="ngModel"
+    
+    />
+    <p *ngIf="!productName.valid">
+      Invalid Name
+    </p>
+        <p *ngIf="productName.errors?.required">
+      Name is required
+    </p>
+    <p *ngIf="productName.errors?.minlength">
+      minimum 3 chars needed
+    </p>
+
+    <!--<p *ngIf="productName.dirty">
+      Name changed
+    </p>-->
+    Year
+    <input name="year" [(ngModel)]="product.year"/>
+
+
+    
+    Brand {{brands.length}}
+  <select name="brandId" [(ngModel)]="product.brandId">
+  <option *ngFor="let brand of brands"
+  value="{{brand.id}}">
+  {{brand.name}}
+  </option>
+  </select> 
+  <button type="submit" [disabled]="!productForm.valid">Save </button>
+  </form>

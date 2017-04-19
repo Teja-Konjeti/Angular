@@ -1,8 +1,23 @@
 
+
+<nav>
+<a routerLink="/">Home</a>
+<a routerLink="/products/list">Products</a>
+<a routerLink="/about">About</a>
+</nav>
+
+    
 <h1>Angular App :)</h1>
 <h1>{{title}}</h1>
 
-<about title="{{aboutTitle}}" [branches]="['Bangalore','Pune']"></about>
+<!--View Container -->
+<router-outlet>
+
+</router-outlet>
+
+<!--<about title="{{aboutTitle}}" [branches]="['Bangalore','Pune']"></about>
 
 <product-list>
-</product-list>
+</product-list>-->
+
+

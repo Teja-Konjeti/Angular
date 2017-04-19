@@ -5,7 +5,7 @@
 Filtering by {{year}}
 <div class="flex two">
     <div *ngFor="let product of (products | byYear:year);trackBy:trackByProduct">
-        {{i}} - {{k}}
+        {{product.name}} - {{product.id}}
         <article class="card">
             <header>
                 {{product.name}}
@@ -24,6 +24,11 @@ Filtering by {{year}}
                         (likesChanged)="likesChangedHandler($event)"
             >
             </like-widget>
+
+            <button class="button" routerLink="/products/edit/{{product.id}}">
+            edit
+            </button>
+
 
             </footer>
 

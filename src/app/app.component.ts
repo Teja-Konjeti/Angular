@@ -8,7 +8,7 @@ templateUrl:"/app/app.component.html"
 })
 
 export class AppComponent{
-title:string ="Product";
+title:string ="Product Design";
 aboutTitle:string = "About from App";
 }
 
